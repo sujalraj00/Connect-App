@@ -78,16 +78,31 @@ FirebaseDatabase database;
         });
 
         checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    // show password
+//                    edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//                } else {
+//                    // hide password
+//                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//                }
+//            }
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // show password
-                    edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                if (edtPassword != null) {
+                    if (isChecked) {
+                        // show password
+                        edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    } else {
+                        // hide password
+                        edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }
                 } else {
-                    // hide password
-                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    Log.e("Login", "edtPassword is null");
                 }
             }
+
         });
 
 

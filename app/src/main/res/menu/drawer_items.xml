@@ -5,10 +5,16 @@
         android:id="@+id/profileFragment"
         android:icon="@drawable/baseline_person_24"
         android:title="Profile"/>
+
+    <item
+        android:id="@+id/groupChat"
+        android:icon="@drawable/baseline_groups"
+        android:title="Group Chat"/>
     <item
     android:id="@+id/draw_setting"
     android:icon="@drawable/baseline_settings_24"
     android:title="Settings"/>
+
     <item
         android:id="@+id/draw_contactus"
         android:icon="@drawable/baseline_contact_phone_24"
