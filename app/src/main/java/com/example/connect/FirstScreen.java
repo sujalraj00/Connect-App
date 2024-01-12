@@ -102,7 +102,8 @@ ActivityFirstScreenBinding binding;
                     startActivity(intent);
                 } else if (id == R.id.draw_setting) {
                     Toast.makeText(FirstScreen.this, "setting opened", Toast.LENGTH_SHORT).show();
-                    drawFrag(new SettingFragment());
+                    Intent intent = new Intent(FirstScreen.this, SettingsActivity.class);
+                    startActivity(intent);
                  }  else if(id == R.id.profileFragment) {
                     Toast.makeText(FirstScreen.this, "profile opened", Toast.LENGTH_SHORT).show();
                     drawFrag(new ProfileFragment());
