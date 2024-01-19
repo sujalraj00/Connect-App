@@ -102,15 +102,15 @@ ActivityFirstScreenBinding binding;
                     startActivity(intent);
                 } else if (id == R.id.draw_setting) {
                     Toast.makeText(FirstScreen.this, "setting opened", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(FirstScreen.this, SettingsActivity.class);
-                    startActivity(intent);
+                    Intent intents = new Intent(FirstScreen.this, SettingsActivity.class);
+                    startActivity(intents);
                  }  else if(id == R.id.profileFragment) {
                     Toast.makeText(FirstScreen.this, "profile opened", Toast.LENGTH_SHORT).show();
                     drawFrag(new ProfileFragment());
                 } else if( id == R.id.groupChat){
                     Toast.makeText(FirstScreen.this, "group chat opened", Toast.LENGTH_SHORT).show();
-                     Intent intent = new Intent(FirstScreen.this, GroupChatActivity.class);
-                     startActivity(intent);
+                     Intent intentg = new Intent(FirstScreen.this, GroupChatActivity.class);
+                     startActivity(intentg);
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;

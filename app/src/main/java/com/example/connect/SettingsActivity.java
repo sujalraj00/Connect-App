@@ -23,6 +23,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+import java.util.Objects;
+
 public class SettingsActivity extends AppCompatActivity {
 ActivitySettingsBinding binding;
 FirebaseAuth auth;
@@ -47,6 +50,23 @@ FirebaseStorage storage;
             }
         });
 
+        binding.saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String status = binding.etStatus.getText().toString();
+                String username = binding.etUserName.getText().toString();
+
+                HashMap<String, Object> obj = new HashMap<>();
+                obj.put("userName", username);
+                obj.put("status", status);
+
+                database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                        .updateChildren(obj);
+
+                Toast.makeText(SettingsActivity.this, "profile updated", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -55,6 +75,9 @@ FirebaseStorage storage;
                                 Picasso.get().load(users.getProfilepic())
                                         .placeholder(R.drawable.monkey)
                                         .into(binding.profileImage);
+
+                                binding.etStatus.setText(users.getStatus());
+                                binding.etUserName.setText(users.getUserName());
                             }
 
                             @Override
