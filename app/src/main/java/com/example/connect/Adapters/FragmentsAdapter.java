@@ -48,7 +48,7 @@ public class FragmentsAdapter  extends FragmentPagerAdapter {
             title = "STATUS";
         }
         if(position == 2){
-            title = "CALLS";
+            title = "TASKS";
         }
         return title;
     }

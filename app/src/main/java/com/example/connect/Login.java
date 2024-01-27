@@ -39,7 +39,7 @@ CheckBox checkBox1;
 EditText edtPassword;
 ActivityLoginBinding binding;
 FirebaseAuth auth;
-    GoogleSignInClient mGoogleSignInClient;
+GoogleSignInClient mGoogleSignInClient;
 ProgressDialog progressDialog;
 FirebaseDatabase database;
     @Override

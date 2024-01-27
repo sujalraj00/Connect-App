@@ -13,6 +13,6 @@
         android:textColor="@color/white"
         android:textSize="32sp"
         android:layout_margin="11dp"
-        android:text="Explore fragment" />
+        android:text="Status fragment" />
 
 </FrameLayout>
